@@ -12,6 +12,29 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Setup Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Authenticate
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
+
+      - name: Deploy to GitHub Pages
+        run: |
+          git worktree remove github-pages-deploy-action-temp-deployment-folder --force || true
+          git worktree add --no-checkout --detach github-pages-deploy-action-temp-deployment-folder
+          git -C github-pages-deploy-action-temp-deployment-folder checkout -B master origin/master
+          # Your existing deployment script here
+          
       - name: 检查分支
         uses: actions/checkout@v2
         with:
