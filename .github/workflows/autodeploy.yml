@@ -42,9 +42,10 @@ jobs:
 
       - name: 安装依赖
         if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
-        # npm install gulp-cli #全局安装gulp
         run: |
+          npm install gulp-cli #全局安装gulp
           npm install --save
+          
 
       - name: 生成静态文件
       # run: hexo bangumi -u #bilibili番剧更新
