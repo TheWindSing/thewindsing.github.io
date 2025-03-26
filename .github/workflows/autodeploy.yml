@@ -1,5 +1,7 @@
+# .github/workflows/autodeploy.yml
+
 name: 自动部署
-# 当有改动推送到master分支时，启动Action
+
 on:
   push:
     branches:
@@ -30,8 +32,8 @@ jobs:
 
       - name: Deploy to GitHub Pages
         run: |
-          git worktree remove github-pages-deploy-action-temp-deployment-folder --force || true
-          git worktree add --no-checkout --detach github-pages-deploy-action-temp-deployment-folder
+          git worktree prune
+          git worktree add --detach github-pages-deploy-action-temp-deployment-folder
           git -C github-pages-deploy-action-temp-deployment-folder checkout -B master origin/master
           # Your existing deployment script here
           
@@ -70,18 +72,15 @@ jobs:
           npm install gulp #本地安装gulp
           npm install --save
           
-
       - name: 生成静态文件
-      # run: hexo bangumi -u #bilibili番剧更新          gulp
         run: |
           hexo clean
           hexo generate
 
-
       - name: 部署到Github
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          token: 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
+          token: ${{ secrets.GITHUB_TOKEN }}
           repository-name: TheWindSing/thewindsing.github.io
           branch: master
           folder: public
