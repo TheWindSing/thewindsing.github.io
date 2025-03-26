@@ -49,11 +49,11 @@ jobs:
           
 
       - name: 生成静态文件
-      # run: hexo bangumi -u #bilibili番剧更新
+      # run: hexo bangumi -u #bilibili番剧更新          gulp
         run: |
           hexo clean
           hexo generate
-          gulp
+
 
       - name: 部署到Github
         uses: JamesIves/github-pages-deploy-action@v4
