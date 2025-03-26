@@ -20,7 +20,7 @@ jobs:
       - name: 安装 Node
         uses: actions/setup-node@v1
         with:
-          node-version: "12.x"
+          node-version: "22.x"
 
       - name: 安装 Hexo
         run: |
@@ -56,7 +56,7 @@ jobs:
       - name: 部署到Github
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          token: ${{ secrets.ACCESS_TOKEN }}
+          token: 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
           repository-name: TheWindSing/thewindsing.github.io
           branch: master
           folder: public
