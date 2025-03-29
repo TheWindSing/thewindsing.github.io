@@ -62,9 +62,11 @@ hexo.extend.helper.register('related_posts', function (currentPost, allPosts) {
       const className = postDesc ? 'pagination-related' : 'pagination-related no-desc'
       result += `<a class="${className}" href="${url_for(path)}" title="${title}">`
       if (cover_type === 'img') {
-        result += `<img class="cover" src="${url_for(cover)}" alt="cover">`
+        // result += `<img class="cover" src="${url_for(cover)}" alt="cover">`
+        result += `<div class="cover" style="background: #dcdcdc"></div>`
       } else {
-        result += `<div class="cover" style="background: ${cover}"></div>`
+        // result += `<div class="cover" style="background: ${cover}"></div>`
+        result += `<div class="cover" style="background: #dcdcdc"></div>`
       }
       if (dateType === 'created') {
         result += `<div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> ${date(created, hexoConfig.date_format)}</div>`
