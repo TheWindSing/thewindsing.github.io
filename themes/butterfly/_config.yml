@@ -99,10 +99,10 @@ category_img:
 category_per_img:
 
 # The background image of footer
-footer_img: true
+footer_img: false
 
 # Footer Background
-footer_bg: '#dcdcdc'
+footer_bg: false
 
 # Website Background
 # Can set it to color or image url
@@ -1128,7 +1128,7 @@ categoryBar:
     - descr: 个人项目
       cover: https://cdn.cbd.int/akilar-candyassets@1.0.36/image/cover3.webp
   custom_css: https://cdn.cbd.int/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css
-    
+ 
 # Inject
 # Insert the code to head (before '</head>' tag) and the bottom (before '</body>' tag)
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前

@@ -13,6 +13,7 @@
       background-color: var(--mark-bg)
       content: ''
 
+  // 默认颜色
   & > *
     position: relative
     color: var(--light-grey)
@@ -23,6 +24,24 @@
 
     &:hover
       color: $light-blue
+      
+  // 浅色模式
+  [data-theme="light"] &
+    & > *
+      color: var(--dark-grey)  // 浅色模式字体颜色
+    a
+      color: var(--dark-grey)
+      &:hover
+        color: $light-blue  // 浅色模式悬停颜色
+
+  // 深色模式
+  [data-theme="dark"] &
+    & > *
+      color: var(--light-grey)  // 深色模式字体颜色
+    a
+      color: var(--light-grey)
+      &:hover
+        color: $light-blue  // 深色模式悬停颜色
 
   .footer-separator
     margin: 0 4px
