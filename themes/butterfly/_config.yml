@@ -17,21 +17,22 @@ nav:
   fixed: false
 
 menu:
-  首页: / || fas fa-home || faa-tada
-  时间轴: /archives/ || fas fa-archive
   # 闲言碎语: /artitalk/ || fas fa-comment-dots
   # 音乐馆: /music/ || fas fa-music
-  分类: /categories/ || fas fa-folder-open
-  # List||fas fa-list:
+  关于我: /about/ || fas fa-paper-plane
+  更多||fas fa-list:
+    分类: /categories/ || fas fa-folder-open
+    留言板: /comments/ || fas fa-envelope
+    时间轴: /archives/ || fas fa-archive
+    首页: / || fas fa-home || faa-tada
   #   Music: /music/ || fas fa-music
   #   Movie: /movies/ || fas fa-video
 
   #　朋友圈: /fcircle/ || fab fa-artstation
-  留言板: /comments/ || fas fa-envelope
   # 友人帐: /link/ || fas fa-link
   # 闲言碎语: /hpptalk/ || fas fa-comment-dots
   # 追番: /bangumis/ || icon-bilibili1
-  关于: /about/ || icon-zhifeiji
+  # || icon-zhifeiji
   # Home: / || fas fa-home
 
 # --------------------------------------
@@ -986,8 +987,8 @@ note:
 pjax:
   enable: true
   # Exclude the specified pages from pjax, such as '/music/'
-  exclude:
-    # - /xxxxxx/
+  exclude: 
+    - /search/
 
 # Inject the css and script (aplayer/meting)
 aplayerInject:
