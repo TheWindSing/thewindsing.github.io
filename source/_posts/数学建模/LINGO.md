@@ -2,10 +2,12 @@
 title: LINGO
 tags:
   - CUMCM
+  - LINGO
 categories:
   - 计算机笔记
   - 数学建模
 description: description
+cover: https://cdn.jsdelivr.net/gh/TheWindSing/picgo-image-bed/BlogImg/20250403220222676.png
 abbrlink: aad3
 date: 2024-08-26 12:03:01
 ---
@@ -88,11 +90,11 @@ f=@IF(X#LE#500,4*X,@IF(X#LE#1000,500+3*X,1500+2*X);
 
 用X表示运量
 
-![1724656204287](LINGO.assets/1724656204287.png)
+![1724656204287](https://cdn.jsdelivr.net/gh/TheWindSing/picgo-image-bed/BlogImg/20250403220222675.png)
 
 ### 模型
 
-![1724656366236](LINGO.assets/1724656366236.png)
+![1724656366236](https://cdn.jsdelivr.net/gh/TheWindSing/picgo-image-bed/BlogImg/20250403220222676.png)
 
 ### 程序
 

@@ -306,7 +306,7 @@ aside:
       link: https://github.com/TheWindSing
   card_announcement:
     enable: true
-    content: Blog
+    content: 点击“关于我”可以查看简历
   card_recent_post:
     enable: true
     # If set 0 will show all
@@ -466,7 +466,7 @@ busuanzi:
 math:
   # Choose: mathjax, katex
   # Leave it empty if you don't need math
-  use:
+  use: mathjax
   per_page: true
   hide_scrollbar: false
 
@@ -1122,12 +1122,16 @@ categoryBar:
   column: odd # odd：3列 | even：4列
   row: 1 #显示行数，默认两行，超过行数切换为滚动显示
   message:
-    - descr: 电气电子笔记
-      cover: https://cdn.cbd.int/akilar-candyassets@1.0.36/image/cover2.webp
-    - descr: 计算机笔记
-      cover: https://cdn.cbd.int/akilar-candyassets@1.0.36/image/cover1.webp
-    - descr: 个人项目
-      cover: https://cdn.cbd.int/akilar-candyassets@1.0.36/image/cover3.webp
+    - descr:
+    - descr:
+    - descr:
+    - descr:
+    # - descr: 电气电子笔记
+    #   cover: https://cdn.cbd.int/akilar-candyassets@1.0.36/image/cover2.webp
+    # - descr: 计算机笔记
+    #   cover: https://cdn.cbd.int/akilar-candyassets@1.0.36/image/cover1.webp
+    # - descr: 个人项目
+    #   cover: https://cdn.cbd.int/akilar-candyassets@1.0.36/image/cover3.webp
   custom_css: https://cdn.cbd.int/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css
  
 # Inject

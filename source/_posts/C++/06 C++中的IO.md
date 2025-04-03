@@ -5,6 +5,7 @@ categories:
 - 计算机笔记
 date: 2024-01-12 23:55:33
 description: 介绍了C++中的输入输出（IO）操作，包括流的概念、格式化输入输出、文件流操作（文本文件和二进制文件）、随机文件访问，以及自定义I/O操作符的方法，涵盖了从基础到高级的文件处理技术。
+cover: https://cdn.jsdelivr.net/gh/TheWindSing/picgo-image-bed/BlogImg/20250403212900242.png
 abbrlink: 75c2
 ---
 

@@ -2,10 +2,13 @@
 title: SAS
 tags:
   - CUMCM
+  - 线性回归
+  - SAS
 categories:
   - 计算机笔记
   - 数学建模
 description: description
+cover: https://cdn.jsdelivr.net/gh/TheWindSing/picgo-image-bed/BlogImg/20250403215347942.png
 abbrlink: 7c80
 date: 2024-08-23 14:03:01
 ---
@@ -13,7 +16,7 @@ date: 2024-08-23 14:03:01
 
 ##　功能介绍
 
-![1724382303004](SAS.assets/1724382303004.png)
+![1724382303004](https://cdn.jsdelivr.net/gh/TheWindSing/picgo-image-bed/BlogImg/20250403215347940.png)
 
 ## 假设检验
 
@@ -65,11 +68,11 @@ $$
 
 #### 题目
 
-![1724393935718](SAS.assets/1724393935718.png)
+![1724393935718](https://cdn.jsdelivr.net/gh/TheWindSing/picgo-image-bed/BlogImg/20250403215347941.png)
 
 #### 结果和分析
 
-![1724393977368](SAS.assets/1724393977368.png)
+![1724393977368](https://cdn.jsdelivr.net/gh/TheWindSing/picgo-image-bed/BlogImg/20250403215347942.png)
 
 ## 一元线性回归
 
@@ -77,7 +80,7 @@ $$
 
 #### 模型
 
-![1724386137831](SAS.assets/1724386137831.png)
+![1724386137831](https://cdn.jsdelivr.net/gh/TheWindSing/picgo-image-bed/BlogImg/20250403215347943.png)
 
 #### 目的
 
@@ -98,13 +101,13 @@ $$
 
 #### 题目
 
-![1724395116342](SAS.assets/1724395116342.png)
+![1724395116342](https://cdn.jsdelivr.net/gh/TheWindSing/picgo-image-bed/BlogImg/20250403215347944.png)
 
 #### 结果和分析
 
-![1724395311869](SAS.assets/1724395311869.png)
+![1724395311869](https://cdn.jsdelivr.net/gh/TheWindSing/picgo-image-bed/BlogImg/20250403215347945.png)
 
-![1724395327802](SAS.assets/1724395327802.png)
+![1724395327802](https://cdn.jsdelivr.net/gh/TheWindSing/picgo-image-bed/BlogImg/20250403215347946.png)
 
 > 不能在回归方程`y=0.25695+2.93028x`直接把截距项置零，应修改模型重新计算
 

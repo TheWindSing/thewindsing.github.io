@@ -5,11 +5,11 @@
 # Site
 title: thewindsing
 subtitle: 'Blog'
-description: 'Hexo'
+description: '个人博客'
 keywords: windsing
 author: thewindsing
 language: zh-CN
-timezone: ''
+timezone: 'Asia/Shanghai'
 email: thewindsing@stud.tjut.edu.cn
 
 # URL

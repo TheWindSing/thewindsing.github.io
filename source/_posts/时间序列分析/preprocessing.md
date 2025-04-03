@@ -1,10 +1,13 @@
 ---
-title: ARIMA回归
-tag: ARIMA
+title: 风电预测数据预处理
+tag: 
+- 预处理
+- 时间序列分析
 categories:
   - 计算机笔记
-  - 时间序列分析
+  - 机器学习
 typora-copy-images-to: upload
+cover: https://cdn.jsdelivr.net/gh/TheWindSing/picgo-image-bed/BlogImg/20250403204135795.png
 abbrlink: '8381'
 date: 2024-12-24 22:12:33
 ---

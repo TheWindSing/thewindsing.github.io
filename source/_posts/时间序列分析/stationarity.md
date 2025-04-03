@@ -2,11 +2,14 @@
 title: ADF检验
 tag:
   - ARIMA
+  - 时间序列分析
   - ADF检验
+  - 残差分析
 categories:
   - 计算机笔记
-  - 时间序列分析
+  - 机器学习
 typora-copy-images-to: upload
+cover: https://cdn.jsdelivr.net/gh/TheWindSing/picgo-image-bed/BlogImg/20250403204416952.png
 abbrlink: 7a4b
 date: 2024-12-24 23:12:33
 ---
@@ -148,7 +151,6 @@ plt.show()
 ```
 
 
-​    
 ![png](https://cdn.jsdelivr.net/gh/TheWindSing/picgo-image-bed/BlogImg/20250403204416952.png)
 ​    
 

@@ -1,6 +1,7 @@
 ---
 title: 回归
 tag:
+  - 线性回归
   - 最小二乘法
   - 梯度下降
   - 牛顿法
@@ -8,9 +9,14 @@ categories:
   - 计算机笔记
   - 机器学习
 typora-copy-images-to: upload
+cover: https://cdn.jsdelivr.net/gh/TheWindSing/picgo-image-bed/BlogImg/20250403202755991.png
 abbrlink: bbd
 date: 2024-12-23 23:12:33
+description: 本文介绍了使用最小二乘法、梯度下降法和牛顿法进行回归分析的实验过程，包括数据来源、实验原理、代码实现及实验结果。
+swiper_index: 5
 ---
+
+
 
 
 
