@@ -42,9 +42,9 @@ jobs:
             ${{ runner.os }}-
 
       - name: 安装依赖
+      # npm install gulp-cli -g #全局安装gulp
         if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
         run: |
-          npm install gulp-cli -g #全局安装gulp
           npm install --save
 
       - name: 生成静态文件
