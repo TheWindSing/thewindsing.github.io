@@ -107,7 +107,7 @@ footer_bg: false
 
 # Website Background
 # Can set it to color or image url
-background: url(https://i.miji.bid/2025/03/29/4dc7b7e2f4e002b91f9e33b9a949753e.png)
+background:
 
 cover:
   # Disable the cover or not

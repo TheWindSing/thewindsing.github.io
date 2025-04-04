@@ -1,6 +1,6 @@
 ---
 title: C++中的IO
-tag: C++
+tag: CPP
 categories: 
 - 计算机笔记
 date: 2024-01-12 23:55:33
