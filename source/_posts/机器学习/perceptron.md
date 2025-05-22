@@ -10,7 +10,6 @@ cover: >-
 abbrlink: 1c66
 date: 2024-12-23 23:22:12
 description: 本文详细介绍了感知机的原理、学习策略、学习算法，并通过Python代码实现了感知机模型，使用鸢尾花数据集进行分类实验。
-swiper_index: 4
 ---
 
 
