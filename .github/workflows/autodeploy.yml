@@ -40,14 +40,11 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-
+            
       - name: 安装依赖
+        if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
         run: |
-          if [ ! -f package.json ]; then
-        echo "package.json not found, skipping npm install."
-          else
-        npm install --save
-          fi
+          npm install --save
 
       - name: 生成静态文件
       #           hexo bangumi -u #bilibili番剧更新          gulp
