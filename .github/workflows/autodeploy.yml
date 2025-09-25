@@ -42,10 +42,12 @@ jobs:
             ${{ runner.os }}-
 
       - name: 安装依赖
-      # npm install gulp-cli -g #全局安装gulp
-        if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
         run: |
-          npm install --save
+          if [ ! -f package.json ]; then
+        echo "package.json not found, skipping npm install."
+          else
+        npm install --save
+          fi
 
       - name: 生成静态文件
       #           hexo bangumi -u #bilibili番剧更新          gulp
