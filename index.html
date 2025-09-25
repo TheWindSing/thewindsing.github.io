@@ -1,0 +1,400 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>thewindsing - Blog</title><meta name="author" content="thewindsing,thewindsing@stud.tjut.edu.cn"><meta name="copyright" content="thewindsing"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="个人博客">
+<meta property="og:type" content="website">
+<meta property="og:title" content="thewindsing">
+<meta property="og:url" content="http://thewindsing.github.io/index.html">
+<meta property="og:site_name" content="thewindsing">
+<meta property="og:description" content="个人博客">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://thewindsing.github.io/img/butterfly-icon.png">
+<meta property="article:author" content="thewindsing">
+<meta property="article:tag" content="windsing">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://thewindsing.github.io/img/butterfly-icon.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://thewindsing.github.io/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":true,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'thewindsing',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'home'
+}</script><link rel="stylesheet" href="/css/custom.css""><link rel="stylesheet" href="https://cdn.cbd.int/qweather-icons@1.1.1/font/qweather-icons.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">36</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">40</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/about/"><i class="fa-fw fas fa-paper-plane faa-tada"></i><span> 关于我</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><i class="fa-fw fas fa-list faa-tada"></i><span> 更多</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="fa-fw fas fa-folder-open faa-tada"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="fa-fw fas fa-envelope faa-tada"></i><span> 留言板</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="fa-fw fas fa-archive faa-tada"></i><span> 时间轴</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/"><i class="fa-fw fas fa-home faa-tada"></i><span> 首页</span></a></li></ul></div></div></div></div><div class="page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">thewindsing</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/about/"><i class="fa-fw fas fa-paper-plane faa-tada"></i><span> 关于我</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><i class="fa-fw fas fa-list faa-tada"></i><span> 更多</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="fa-fw fas fa-folder-open faa-tada"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="fa-fw fas fa-envelope faa-tada"></i><span> 留言板</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="fa-fw fas fa-archive faa-tada"></i><span> 时间轴</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/"><i class="fa-fw fas fa-home faa-tada"></i><span> 首页</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">thewindsing</h1></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/f607.html" title="笔记本电脑选购">笔记本电脑选购</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-09-25T13:48:43.000Z" title="发表于 2025-09-25 21:48:43">2025-09-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%85%B6%E4%BB%96/">其他</a></span></div><div class="content">基于多维动态决策模型的笔记本电脑选购评估摘要该报告旨在为本人电气工程专业大四学生在两款笔记本电脑——二手微软Surface Laptop 7与全新华硕天选Air 2025——之间做出最优选择提供科学依据。面对需求的多维性、风险感知的非对称性以及长期规划的动态性，传统评估方法显得力不从心。为此，本报告构建了一个综合性的决策分析框架。首先，通过多属性效用理论（MAUT）建立静态加权评分模型，对产品的固有属性进行量化；其次，引入可靠性工程中的风险调整后总拥有成本（TCO）与平均无故障时间（MTTF）模型，对生命周期内的经济成本与风险进行评估；最终，独创建立了“平行宇宙动态战略模型（PDS Model）”，该模型能够整合未来投资事件（如配置台式机、eGPU），并根据用户角色的动态转变调整评估权重，从而计算出不同决策路径的动态生命周期总价值（DLTV）。模型分析结果表明，尽管“天选Air路径”在单位成本价值比上以0.00368略高于“Surface路径”的0.00328，但“Surface路径”在动态生命周期总价值（60.36 vs....</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/8320.html" title="信息论知识和例题总结">信息论知识和例题总结</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-05-18T05:31:33.000Z" title="发表于 2025-05-18 13:31:33">2025-05-18</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AC%94%E8%AE%B0/">计算机笔记</a></span></div><div class="content">信息论知识总结引论信息论的三个层次基本信息论：山农信息论  一般信息论：通信的实际应用  广义信息论：各个领域   通信基本模型信息指通信的数学理论   信息：消息中真正有用的  消息：信息的载体   通信三个基本要素：信源、信道、信宿    基本信息论信息度量信源的不肯定度 信源的不肯定度表示为 H(X) = K \log \frac{1}{p}   符合等概率时，不确定度最大；等概率时概率小，信息量大，长度可加。     自信息量给定离散概率空间 $[X, P]$, 信源中某个具体消息的自信息量 $l(x)$ 定义为：$l(x) = -log_{a}p(x)$ 其中 $x \in X$ .  通信与信息中最常用的是以 2 为底，a = 2，单位为比特 (bit)；  理论推导中以 e 为底较方便，a = e，单位为奈特 (Nat)；  工程上以 10 为底较方便，a = 10，单位为笛特 (Det) 。  可用对数换底公式进行单位互换： 1 bit = 0.693 Nat = 0.301 Det。   若 m 位二进制等长编码（码字），其提供的信息量为： I =...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/6b92.html" title="色彩美学课程报告">色彩美学课程报告</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-05-12T13:41:13.000Z" title="发表于 2025-05-12 21:41:13">2025-05-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%85%B6%E4%BB%96/">其他</a></span></div><div class="content">《二十四节气中的色彩美学》结课作业    一 简答题1. 节气调研清明（4月4日–6日）气候特点家乡湖南邵东日均气温16–18°C，呈现&quot;清明时节雨纷纷&quot;的典型特征。昼夜温差达8–10°C，偶发倒春寒现象，空气相对湿度维持在75%–85%。 当令植物  艾草：叶背密布白色绒毛，清明前采摘嫩芽，出青率最佳  鼠曲草：俗称&quot;清明草&quot;，邵东丘陵地带每亩可采鲜草50–80公斤  野生荠菜：富含维生素C（55mg/100g），邵东民间有&quot;三月三，荠菜当灵丹&quot;之说   饮食习惯  蒿子粑粑：糯米与籼米7:3配比，包腊肉笋丁馅，蒸制后煎至两面金黄  青团：添加石灰水焯过的艾叶，赋予独特碱香  雷公菌炒蛋：雨后采集地耳，配土鸡蛋翻炒，具清热明目功效   民俗风俗  挂山祭祖：族人修缮祖坟，插彩纸幡（清明吊），供三牲米酒  踏青采蕄：全家上山采摘蕨菜，儿童佩戴柳枝冠环...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/7a4b.html" title="ADF检验">ADF检验</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-12-24T15:12:33.000Z" title="发表于 2024-12-24 23:12:33">2024-12-24</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AC%94%E8%AE%B0/">计算机笔记</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a></span></div><div class="content">ADF检验（单位根检验）根据 P 值（result[1]）判断 假设 H０: 非平稳 H１: 平稳  判断 如果 P 值 ≤ 0.05：则反对零假设（H₀）： 数据平稳，没有单位根。 如果 P 值 &gt; 0.05：则支持零假设（H₀）： 数据非平稳，有单位根。  单位根的存在意味着序列是非平稳的，无法直接用于建模，需要进行差分或其他变换。 123456import numpy as npimport pandas as pdimport matplotlib.pyplot as pltdata = pd.read_csv(&quot;../data/Turbine_Data.csv&quot;,                 low_memory=False,                 parse_dates=[&quot;Unnamed: 0&quot;]) 12345678910111213141516data[&#x27;DateTime&#x27;] = data[&#x27;Unnamed: 0&#x27;]...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/8381.html" title="风电预测数据预处理">风电预测数据预处理</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-12-24T14:12:33.000Z" title="发表于 2024-12-24 22:12:33">2024-12-24</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AC%94%E8%AE%B0/">计算机笔记</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a></span></div><div class="content">123import numpy as npimport pandas as pdimport matplotlib.pyplot as plt 1234data = pd.read_csv(&quot;../data/Turbine_Data.csv&quot;,                 low_memory=False,                 parse_dates=[&quot;Unnamed: 0&quot;])data.tail()       .dataframe tbody tr th:only-of-type {         vertical-align: middle;     }      .dataframe tbody tr th {         vertical-align: top;     }      .dataframe thead th {         text-align: right;     }                        Unnamed: 0       ActivePower      ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/1c66.html" title="感知机原理">感知机原理</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-12-23T15:22:12.000Z" title="发表于 2024-12-23 23:22:12">2024-12-23</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AC%94%E8%AE%B0/">计算机笔记</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a></span></div><div class="content">感知机原理感知机模型可以看作一个超平面：  f(x) = \text{sigmoid}(wx+b)其中  x \in \mathbb{R}^{n}, w \in \mathbb{R}^{n}, b \in \mathbb{R}当  wx+b > 0时，模型将该样本分为正类 当  wx+b \leq 0时，模型将该样本分为负类 感知器包括多个输入节点，从$x{1}$到$x{n}$，有多个权重矩阵$w{0}$到$w{n}$。一个输出节点$O$，激活函数使用sigmoid函数，最后输出的值为1或者-1。 学习策略令$M$代表样本点被误分的集合。 所有的被误分类的点都满足：y_i(w \cdot x_i + b) < 0 损失函数为：L(w,b) = \sum_{x_i \in M} y_i (w \cdot x_i + b) 优化目标是损失最小化，含义为：最小化误分类点到决策面的距离！ 学习算法随机梯度下降算法（stochastic gradient...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/bbd.html" title="A股回归分析实验">A股回归分析实验</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-12-23T15:12:33.000Z" title="发表于 2024-12-23 23:12:33">2024-12-23</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AC%94%E8%AE%B0/">计算机笔记</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a></span></div><div class="content"> 数据来源：tushare A股日线行情  1234567891011import tushare as tsimport numpy as np# 设置tushare的tokents.set_token(&#x27;4e542e2517c15f3ef8b5d5f53c50ed43b501c0952dfeeda41dbdbd4e&#x27;)# 初始化pro接口pro = ts.pro_api()from matplotlib import font_manager# 设置中文字体 Linux系统 宋体font = font_manager.FontProperties(fname=&quot;/usr/share/fonts/Fonts/simsun.ttc&quot;)import matplotlib.pyplot as plt  交易日每天15点～16点之间入库，使用5家上市企业8月1日到9月1日的A股日线行情深圳证券交易所数据。  123456789101112#...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/282c.html" title="电力系统稳定性分析">电力系统稳定性分析</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-10-13T13:23:25.000Z" title="发表于 2024-10-13 21:23:25">2024-10-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%94%B5%E6%B0%94%E7%94%B5%E5%AD%90%E7%AC%94%E8%AE%B0/">电气电子笔记</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%94%B5%E6%B0%94%E7%94%B5%E5%AD%90%E7%AC%94%E8%AE%B0/%E7%94%B5%E5%8A%9B%E7%B3%BB%E7%BB%9F/">电力系统</a></span></div><div class="content">摘要本文主要对电力系统的稳定性分析进行了总结与探讨。电力系统的稳定性是指在扰动后系统能够继续稳定运行的能力，分为频率稳定、电压稳定和同步稳定三种类型。本文首先介绍了动态模型分析，重点阐述了同步发电机组在扰动下的运动方程，并分析了励磁调节对系统稳定性的影响。接着，讨论了静态稳定性，包括小扰动下系统恢复能力的分析方法，并通过代数判据（如胡尔维茨判据）进行了定量分析。文章还提出了提高静态稳定性的若干措施，如减小发电机电抗、线路电抗等。最后，本文对暂态稳定性进行了分析，强调了“等面积法则”在系统恢复中的作用，并提出了增强暂态稳定性的措施，如故障快速切除、自动重合闸等。整体而言，本文对电力系统的稳定性分析方法、提升稳定性的措施提供了系统性总结，并为实际电力系统的稳定性评估与优化提供了理论依据。 关键词：电力系统稳定性分析；动态模型；静态模型；定量分析；暂态稳定性；提高稳定性措施  1. 电力系统稳定性分析的动态模型1.1 电力系统稳定性定义电力系统稳定性：指电力系统受到一定的扰动后能否继续运行的能力。   ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/1979.html" title="三相系统坐标变换分析与Park变换原理总结">三相系统坐标变换分析与Park变换原理总结</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-10-12T15:13:25.000Z" title="发表于 2024-10-12 23:13:25">2024-10-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%94%B5%E6%B0%94%E7%94%B5%E5%AD%90%E7%AC%94%E8%AE%B0/">电气电子笔记</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%94%B5%E6%B0%94%E7%94%B5%E5%AD%90%E7%AC%94%E8%AE%B0/%E7%94%B5%E5%8A%9B%E7%B3%BB%E7%BB%9F/">电力系统</a></span></div><div class="content">...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/9932.html" title="电力系统短路计算总结与两相短路故障分析">电力系统短路计算总结与两相短路故障分析</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-10-12T11:23:25.000Z" title="发表于 2024-10-12 19:23:25">2024-10-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%94%B5%E6%B0%94%E7%94%B5%E5%AD%90%E7%AC%94%E8%AE%B0/">电气电子笔记</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%94%B5%E6%B0%94%E7%94%B5%E5%AD%90%E7%AC%94%E8%AE%B0/%E7%94%B5%E5%8A%9B%E7%B3%BB%E7%BB%9F/">电力系统</a></span></div><div class="content">摘要本文探讨了电力系统中对称与不对称短路故障的分析方法与计算原理。基于对称分量法，分解故障为正序、逆序和零序三套系统，分别建立序网方程并分析其特性。本文重点分析了两相短路故障的边界条件、等效电路以及故障点电压和电流的计算过程，得到了相关电压、电流相量关系及故障分析的关键步骤。研究结果为深入理解电力系统故障特性及优化设计提供了帮助。 关键词：电力系统；短路故障；对称分量法；序网分析；两相短路  一、电力系统短路计算原理和方法总结1. 对称短路短路后达到新的三相对称状态，只需列出单相的KVL方程，得到关于电流的一阶微分方程并求解。另外两项通过相位调整即可获得。 2. 不对称短路 将故障部分根据戴维南等值为接入了一个不对称的带内阻的电压源。利用对称分量法， 将不对称的系统分解为三套对称的系统，分别为正序、逆序、零序系统$𝐼𝑎$、$𝐼𝑏$、$𝐼_𝑐$代表不 对称的三相电流，可分解为 ：  \begin{cases}      \dot{I}_a=\dot{I}_{a1}+\dot{I}_{a2}+\dot{I}_{a0}\\    ...</div></div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/#content-inner">4</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">thewindsing</div><div class="author-info-description">个人博客</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">36</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">40</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/TheWindSing"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon faa-parent animated-hover" href="https://github.com/TheWindSing" target="_blank" title="fab fa-github"></a><a class="social-icon faa-parent animated-hover" href="mailto:thewindsing@stud.tjut.edu.cn" target="_blank" title="fas fa-envelope"></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">点击“关于我”可以查看简历</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/f607.html" title="笔记本电脑选购">笔记本电脑选购</a><time datetime="2025-09-25T13:48:43.000Z" title="发表于 2025-09-25 21:48:43">2025-09-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/8320.html" title="信息论知识和例题总结">信息论知识和例题总结</a><time datetime="2025-05-18T05:31:33.000Z" title="发表于 2025-05-18 13:31:33">2025-05-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/6b92.html" title="色彩美学课程报告">色彩美学课程报告</a><time datetime="2025-05-12T13:41:13.000Z" title="发表于 2025-05-12 21:41:13">2025-05-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/7a4b.html" title="ADF检验">ADF检验</a><time datetime="2024-12-24T15:12:33.000Z" title="发表于 2024-12-24 23:12:33">2024-12-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/8381.html" title="风电预测数据预处理">风电预测数据预处理</a><time datetime="2024-12-24T14:12:33.000Z" title="发表于 2024-12-24 22:12:33">2024-12-24</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%85%B6%E4%BB%96/"><span class="card-category-list-name">其他</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%94%B5%E6%B0%94%E7%94%B5%E5%AD%90%E7%AC%94%E8%AE%B0/"><span class="card-category-list-name">电气电子笔记</span><span class="card-category-list-count">12</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%94%B5%E6%B0%94%E7%94%B5%E5%AD%90%E7%AC%94%E8%AE%B0/%E5%B5%8C%E5%85%A5%E5%BC%8F/"><span class="card-category-list-name">嵌入式</span><span class="card-category-list-count">7</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%94%B5%E6%B0%94%E7%94%B5%E5%AD%90%E7%AC%94%E8%AE%B0/%E7%94%B5%E5%8A%9B%E7%B3%BB%E7%BB%9F/"><span class="card-category-list-name">电力系统</span><span class="card-category-list-count">5</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AC%94%E8%AE%B0/"><span class="card-category-list-name">计算机笔记</span><span class="card-category-list-count">22</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AC%94%E8%AE%B0/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/"><span class="card-category-list-name">数学建模</span><span class="card-category-list-count">6</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"><span class="card-category-list-name">机器学习</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AC%94%E8%AE%B0/%E7%AE%97%E6%B3%95/"><span class="card-category-list-name">算法</span><span class="card-category-list-count">3</span></a></li></ul></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E4%BC%A0%E9%80%92%E5%87%BD%E6%95%B0/" style="font-size: 1.18em; color: #999ca1">传递函数</a> <a href="/tags/%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90/" style="font-size: 1.1em; color: #999">主成分分析</a> <a href="/tags/Z%E5%8F%98%E6%8D%A2/" style="font-size: 1.18em; color: #999ca1">Z变换</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84/" style="font-size: 1.1em; color: #999">线性方程组</a> <a href="/tags/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" style="font-size: 1.1em; color: #999">数字图像处理</a> <a href="/tags/%E6%84%9F%E7%9F%A5%E6%9C%BA/" style="font-size: 1.1em; color: #999">感知机</a> <a href="/tags/LINGO/" style="font-size: 1.1em; color: #999">LINGO</a> <a href="/tags/%E7%B3%BB%E7%BB%9F%E7%A8%B3%E5%AE%9A%E6%80%A7/" style="font-size: 1.18em; color: #999ca1">系统稳定性</a> <a href="/tags/Park%E5%8F%98%E6%8D%A2/" style="font-size: 1.1em; color: #999">Park变换</a> <a href="/tags/%E4%BF%A1%E6%81%AF%E8%AE%BA/" style="font-size: 1.1em; color: #999">信息论</a> <a href="/tags/%E5%89%8D%E6%8E%A8%E5%9B%9E%E4%BB%A3/" style="font-size: 1.1em; color: #999">前推回代</a> <a href="/tags/C/" style="font-size: 1.1em; color: #999">C</a> <a href="/tags/%E5%AF%B9%E7%A7%B0%E5%88%86%E9%87%8F%E6%B3%95/" style="font-size: 1.1em; color: #999">对称分量法</a> <a href="/tags/%E9%A2%84%E5%A4%84%E7%90%86/" style="font-size: 1.1em; color: #999">预处理</a> <a href="/tags/%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95/" style="font-size: 1.18em; color: #999ca1">最小二乘法</a> <a href="/tags/%E5%9B%A0%E5%AD%90%E5%88%86%E6%9E%90/" style="font-size: 1.1em; color: #999">因子分析</a> <a href="/tags/%E6%9E%9A%E4%B8%BE/" style="font-size: 1.1em; color: #999">枚举</a> <a href="/tags/%E5%A4%9A%E9%87%8D%E5%85%B1%E7%BA%BF%E6%80%A7/" style="font-size: 1.1em; color: #999">多重共线性</a> <a href="/tags/ADF%E6%A3%80%E9%AA%8C/" style="font-size: 1.1em; color: #999">ADF检验</a> <a href="/tags/51%E5%8D%95%E7%89%87%E6%9C%BA/" style="font-size: 1.1em; color: #999">51单片机</a> <a href="/tags/%E7%9F%AD%E8%B7%AF%E6%95%85%E9%9A%9C/" style="font-size: 1.1em; color: #999">短路故障</a> <a href="/tags/BCD%E7%A0%81/" style="font-size: 1.1em; color: #999">BCD码</a> <a href="/tags/%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E5%88%86%E6%9E%90/" style="font-size: 1.18em; color: #999ca1">时间序列分析</a> <a href="/tags/SAS/" style="font-size: 1.1em; color: #999">SAS</a> <a href="/tags/%E6%AE%8B%E5%B7%AE%E5%88%86%E6%9E%90/" style="font-size: 1.1em; color: #999">残差分析</a> <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 1.1em; color: #999">日常</a> <a href="/tags/%E7%89%9B%E9%A1%BF%E6%B3%95/" style="font-size: 1.1em; color: #999">牛顿法</a> <a href="/tags/%E6%BD%AE%E6%B5%81%E8%AE%A1%E7%AE%97/" style="font-size: 1.1em; color: #999">潮流计算</a> <a href="/tags/ISP/" style="font-size: 1.1em; color: #999">ISP</a> <a href="/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/" style="font-size: 1.1em; color: #999">经验分享</a> <a href="/tags/CPP/" style="font-size: 1.5em; color: #99a9bf">CPP</a> <a href="/tags/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/" style="font-size: 1.1em; color: #999">梯度下降</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" style="font-size: 1.34em; color: #99a3b0">线性回归</a> <a href="/tags/%E6%8B%9F%E5%90%88%E4%BC%98%E5%BA%A6%E6%A3%80%E9%AA%8C/" style="font-size: 1.1em; color: #999">拟合优度检验</a> <a href="/tags/%E7%BE%8E%E8%82%B2/" style="font-size: 1.1em; color: #999">美育</a> <a href="/tags/FPGA/" style="font-size: 1.26em; color: #999fa8">FPGA</a> <a href="/tags/%E9%AB%98%E6%96%AF%E6%B6%88%E5%85%83%E6%B3%95/" style="font-size: 1.1em; color: #999">高斯消元法</a> <a href="/tags/ARIMA/" style="font-size: 1.1em; color: #999">ARIMA</a> <a href="/tags/F%E6%A3%80%E9%AA%8C/" style="font-size: 1.1em; color: #999">F检验</a> <a href="/tags/CUMCM/" style="font-size: 1.42em; color: #99a6b7">CUMCM</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      <a class="card-more-btn" href="/archives/"
+            title="查看更多">
+            <i class="fas fa-angle-right"></i>
+          </a>
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/09/">
+            <span class="card-archive-list-date">
+              九月 2025
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/05/">
+            <span class="card-archive-list-date">
+              五月 2025
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2024/12/">
+            <span class="card-archive-list-date">
+              十二月 2024
+            </span>
+            <span class="card-archive-list-count">4</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2024/10/">
+            <span class="card-archive-list-date">
+              十月 2024
+            </span>
+            <span class="card-archive-list-count">4</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2024/09/">
+            <span class="card-archive-list-date">
+              九月 2024
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2024/08/">
+            <span class="card-archive-list-date">
+              八月 2024
+            </span>
+            <span class="card-archive-list-count">5</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2024/07/">
+            <span class="card-archive-list-date">
+              七月 2024
+            </span>
+            <span class="card-archive-list-count">3</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2024/04/">
+            <span class="card-archive-list-date">
+              四月 2024
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">36</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">84.1k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2025-09-25T20:26:13.883Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;2025 By thewindsing</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.4.0-b1</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><div class="js-pjax"></div><script async rel="prefetch" src="/js/console.js"></script><script async src="/js/diytitle.js"></script><script async src="/js/grayscale.js"></script><script async data-pjax src="/js/floatpanel.js"></script><div class="aplayer no-destroy" data-id="8152976493" data-server="netease" data-type="playlist"   data-order="list" data-fixed="true" data-preload="auto" data-autoplay="false" data-mutex="true" ></div><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"]):not([href="/search/"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => fn())
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><!-- hexo injector body_end start --><script data-pjax>
+    function butterfly_categories_card_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<style>li.categoryBar-list-item{width:32.3%;}.categoryBar-list{max-height: 190px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 160px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/计算机笔记/&quot;);" href="javascript:void(0);">计算机笔记</a><span class="categoryBar-list-count">22</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/电气电子笔记/&quot;);" href="javascript:void(0);">电气电子笔记</a><span class="categoryBar-list-count">12</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/计算机笔记/数学建模/&quot;);" href="javascript:void(0);">数学建模</a><span class="categoryBar-list-count">6</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/电气电子笔记/嵌入式/&quot;);" href="javascript:void(0);">嵌入式</a><span class="categoryBar-list-count">7</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/其他/&quot;);" href="javascript:void(0);">其他</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/计算机笔记/机器学习/&quot;);" href="javascript:void(0);">机器学习</a><span class="categoryBar-list-count">5</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/电气电子笔记/电力系统/&quot;);" href="javascript:void(0);">电力系统</a><span class="categoryBar-list-count">5</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/计算机笔记/算法/&quot;);" href="javascript:void(0);">算法</a><span class="categoryBar-list-count">3</span><span class="categoryBar-list-descr"></span></li></ul></div></div>';
+      console.log('已挂载butterfly_categories_card')
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      }
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    butterfly_categories_card_injector_config()
+    }
+  </script><script data-pjax>
+  function butterfly_footer_beautify_injector_config(){
+    var parent_div_git = document.getElementById('footer-wrap');
+    var item_html = '<div id="workboard"></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="博客框架为Hexo_v7.3.0" title=""><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&amp;logo=hexo" alt=""/></a><a class="github-badge" target="_blank" href="https://butterfly.js.org/" style="margin-inline:5px" data-title="主题版本Butterfly_v5.4.0-b1" title=""><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&amp;logo=bitdefender" alt=""/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px" data-title="本站项目由Github托管" title=""><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&amp;logo=GitHub" alt=""/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px" data-title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可" title=""><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&amp;logo=Claris" alt=""/></a></p>';
+    console.log('已挂载butterfly_footer_beautify')
+    parent_div_git.insertAdjacentHTML("beforeend",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_footer_beautify_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_footer_beautify_injector_config();
+  }
+  </script><script async src="https://npm.elemecdn.com/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.js"></script><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/1979.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Geometric_interpretation_of_dqo_transform.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-10-12</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/1979.html&quot;);" href="javascript:void(0);" alt="">三相系统坐标变换分析与Park变换原理总结</a><div class="blog-slider__text">本文详细探讨了Park变换的基本原理，包括坐标长度法和能量守恒法两种变换方法，并深入分析了变换后电机磁链和电压方程的数学推导过程。</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/1979.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/bbd.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://cdn.jsdelivr.net/gh/TheWindSing/picgo-image-bed/BlogImg/20250403202755991.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-12-23</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/bbd.html&quot;);" href="javascript:void(0);" alt="">A股回归分析实验</a><div class="blog-slider__text">本文介绍了使用最小二乘法、梯度下降法和牛顿法进行回归分析的实验过程，包括数据来源、实验原理、代码实现及实验结果。</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/bbd.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/6b92.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://cdn.jsdelivr.net/gh/TheWindSing/picgo-image-bed/BlogImg/20250522172813029.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2025-05-12</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/6b92.html&quot;);" href="javascript:void(0);" alt="">色彩美学课程报告</a><div class="blog-slider__text">本篇课程报告围绕《二十四节气中的色彩美学》美育选修课程展开，内容涵盖节气调研、色彩解析、生活中的色彩观察，以及参观木雕博物馆和天津博物馆的实践心得。通过理论与实践相结合，深入探讨色彩在自然、文化、艺术与生活中的多重意义，展现色彩美学的独特魅力与文化价值。</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/6b92.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/6309.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://cdn.jsdelivr.net/gh/TheWindSing/picgo-image-bed/BlogImg/20250403212900242.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-01-12</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/6309.html&quot;);" href="javascript:void(0);" alt="">多态</a><div class="blog-slider__text">介绍了C++中的多态性，包括编译时多态（函数重载、运算符重载）和运行时多态（虚函数、动态绑定），并详细讲解了纯虚函数和抽象类的概念及其应用。</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/6309.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/6565.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://cdn.jsdelivr.net/gh/TheWindSing/picgo-image-bed/BlogImg/20250403235241971.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-01-06</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/6565.html&quot;);" href="javascript:void(0);" alt="">离散控制系统</a><div class="blog-slider__text">本文介绍了离散控制系统的基本概念及其实现方法，包括脉冲传递函数的求解、差分方程的输出曲线绘制、系统的零极点分析及稳定性分析，并通过 MATLAB 仿真验证了相关理论。</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/6565.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/8320.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://cdn.jsdelivr.net/gh/TheWindSing/picgo-image-bed/BlogImg/20250522174143076.svg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2025-05-18</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/8320.html&quot;);" href="javascript:void(0);" alt="">信息论知识和例题总结</a><div class="blog-slider__text">本文系统总结了信息论的核心知识点，包括信息度量、熵、联合熵、条件熵、互信息、信道容量、编码理论（如哈夫曼编码、香农编码）、抗干扰编码（如汉明码、卷积码）等，并配有典型例题及详细解答，适合计算机、通信等专业学习参考。</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/8320.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js"></script><script defer data-pjax src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js"></script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '500ms');
+    arr[i].setAttribute('data-wow-delay', '200ms');
+    arr[i].setAttribute('data-wow-offset', '30');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '');
+    arr[i].setAttribute('data-wow-delay', '200ms');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('flink-list-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__flipInY');
+    arr[i].setAttribute('data-wow-duration', '1s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('flink-list-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__animated');
+    arr[i].setAttribute('data-wow-duration', '1s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('article-sort-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__slideInRight');
+    arr[i].setAttribute('data-wow-duration', '0.5s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('site-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__flipInY');
+    arr[i].setAttribute('data-wow-duration', '1s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('site-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__animated');
+    arr[i].setAttribute('data-wow-duration', '1s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script></div><script defer src="https://cdn.cbd.int/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://cdn.cbd.int/hexo-butterfly-wowjs/lib/wow_init.js"></script><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"superSample":2,"width":80,"height":160,"position":"left","hOffset":0,"vOffset":10},"mobile":{"scale":0.5,"show":true},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
